@@ -1,0 +1,3960 @@
+/* ==================================================
+   TRI-CITIES SLEIGH TEAM
+   VERSION 6.0
+================================================== */
+
+
+/* =========================================
+   VARIABLES
+========================================= */
+
+:root{
+
+    --green:#1B4332;
+    --green-light:#2D6A4F;
+
+    --red:#A52A2A;
+
+    --tan:#D7B98E;
+
+    --cream:#FAF7F2;
+
+    --white:#FFFFFF;
+
+    --text:#333333;
+
+    --gray:#777777;
+
+    --shadow-sm:0 4px 12px rgba(0,0,0,.08);
+    --shadow-md:0 10px 30px rgba(0,0,0,.12);
+    --shadow-lg:0 18px 45px rgba(0,0,0,.18);
+
+    --radius-sm:12px;
+    --radius-md:18px;
+    --radius-lg:28px;
+
+    --transition:.35s ease;
+
+}
+
+
+
+/* =========================================
+   RESET
+========================================= */
+
+*{
+
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+
+}
+
+html{
+
+    scroll-behavior:smooth;
+
+}
+
+body{
+
+    font-family:'Poppins',sans-serif;
+
+    background:var(--cream);
+
+    color:var(--text);
+
+    overflow-x:hidden;
+
+    padding-top:90px;
+
+}
+
+img{
+
+    display:block;
+
+    max-width:100%;
+
+}
+
+a{
+
+    text-decoration:none;
+
+    color:inherit;
+
+}
+
+ul{
+
+    list-style:none;
+
+}
+
+
+
+/* =========================================
+   TYPOGRAPHY
+========================================= */
+
+h1,
+h2,
+h3{
+
+    font-family:'Cormorant Garamond',serif;
+
+}
+
+h1{
+
+    font-size:4.5rem;
+
+    line-height:1.1;
+
+    color:var(--green);
+
+}
+
+h2{
+
+    font-size:3rem;
+
+    color:var(--green);
+
+    margin-bottom:20px;
+
+}
+
+h3{
+
+    font-size:2rem;
+
+    color:var(--green);
+
+}
+
+p{
+
+    line-height:1.8;
+
+}
+
+
+
+/* =========================================
+   GLOBAL LAYOUT
+========================================= */
+
+.container{
+
+    width:100%;
+
+    max-width:1200px;
+
+    margin:auto;
+
+}
+
+section{
+
+    padding:100px 8%;
+
+}
+
+.section-tag{
+
+    color:var(--red);
+
+    font-size:.8rem;
+
+    font-weight:700;
+
+    letter-spacing:4px;
+
+    text-transform:uppercase;
+
+    margin-bottom:12px;
+
+}
+
+.section-description{
+
+    color:var(--gray);
+
+    max-width:700px;
+
+    margin:20px auto 0;
+
+    line-height:1.8;
+
+}
+
+.text-center{
+
+    text-align:center;
+
+}
+
+.text-left{
+
+    text-align:left;
+
+}
+
+/* =========================================
+   BUTTONS
+========================================= */
+
+.btn{
+
+    display:inline-block;
+
+    background:var(--tan);
+
+    color:var(--green);
+
+    padding:16px 38px;
+
+    border:none;
+
+    border-radius:50px;
+
+    font-size:1rem;
+
+    font-weight:600;
+
+    letter-spacing:.5px;
+
+    cursor:pointer;
+
+    transition:var(--transition);
+
+    box-shadow:var(--shadow-sm);
+
+}
+
+.btn:hover{
+
+    background:white;
+
+    transform:translateY(-4px);
+
+    box-shadow:var(--shadow-md);
+
+}
+
+.btn-secondary{
+
+    background:transparent;
+
+    color:white;
+
+    border:2px solid white;
+
+}
+
+.btn-secondary:hover{
+
+    background:white;
+
+    color:var(--green);
+
+}
+
+.donate-btn {
+    background: var(--tan);
+    color: var(--green);
+    padding: 14px 32px;
+    border-radius: 30px;
+    font-weight: 600;
+}
+
+
+
+/* =========================================
+   HEADER / NAVIGATION
+========================================= */
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9999;
+    background: var(--green);
+    box-shadow: var(--shadow-md);
+    box-sizing: border-box;
+    transition: var(--transition);
+}
+
+.header-container {
+    width: 100%;
+    max-width: 1400px;
+    min-height: 92px;
+    margin: 0 auto;
+    padding: 14px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    box-sizing: border-box;
+}
+
+.logo-link {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-shrink: 0;
+    text-decoration: none;
+}
+
+.logo-link .logo {
+    width: 72px;
+    height: 72px;
+    max-width: 72px;
+    max-height: 72px;
+    object-fit: contain;
+    display: block;
+    flex-shrink: 0;
+}
+
+.logo-link .logo-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.logo-link .logo-text h2 {
+    margin: 0;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 1.7rem;
+    line-height: 1;
+    font-weight: 600;
+    color: white;
+    white-space: nowrap;
+}
+
+.logo-link .logo-text p {
+    margin: 5px 0 0;
+    font-family: "Poppins", sans-serif;
+    font-size: .9rem;
+    line-height: 1;
+    color: var(--tan);
+    white-space: nowrap;
+}
+
+
+/* =========================================
+   NAV LINKS
+========================================= */
+
+header nav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 28px;
+    margin-left: auto;
+}
+
+header nav a {
+    position: relative;
+    display: inline-block;
+
+    font-family: "Poppins", sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+
+    color: white;
+    text-decoration: none;
+    white-space: nowrap;
+
+    transition: var(--transition);
+}
+
+header nav a:hover {
+    color: var(--tan);
+}
+
+header nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 0;
+    height: 2px;
+    background: var(--tan);
+    transition: var(--transition);
+}
+
+header nav a:hover::after {
+    width: 100%;
+}
+
+.menu-toggle {
+    display: none;
+    border: none;
+    background: transparent;
+    color: white;
+    font-size: 2rem;
+    line-height: 1;
+    cursor: pointer;
+    padding: 6px;
+}
+
+/* =========================================
+   DONATE COMING SOON
+========================================= */
+
+header nav .donate-button {
+    display: inline-block;
+
+    padding: 13px 30px;
+
+    border-radius: 30px;
+
+    background: var(--tan);
+
+    font-family: "Poppins", sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: normal;
+
+    color: white;
+    text-decoration: none;
+    white-space: nowrap;
+
+    cursor: default;
+}
+
+
+/* =========================================
+   TABLET / SMALL DESKTOP
+========================================= */
+
+@media (max-width: 1100px) {
+
+    .header-container {
+        padding: 14px 25px;
+        gap: 20px;
+    }
+
+    .logo-link .logo {
+        width: 62px;
+        height: 62px;
+    }
+
+    .logo-link .logo-text h2 {
+        font-size: 1.45rem;
+    }
+
+    .logo-link .logo-text p {
+        font-size: .78rem;
+    }
+
+    header nav {
+        gap: 18px;
+    }
+
+    header nav a {
+        font-size: .88rem;
+    }
+
+    header nav .donate-button {
+        padding: 11px 22px;
+        font-size: .88rem;
+    }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 800px) {
+    .header-container {
+        min-height: 78px;
+        padding: 10px 20px;
+        position: relative;
+    }
+
+    .menu-toggle {
+        display: block;
+        margin-left: auto;
+    }
+
+    header nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        padding: 18px 20px 24px;
+        background: var(--green);
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        box-shadow: var(--shadow-md);
+        box-sizing: border-box;
+    }
+
+    header nav.open {
+        display: flex;
+    }
+
+    header nav a,
+    header nav .donate-button {
+        width: 100%;
+        text-align: center;
+        padding: 14px 12px;
+        box-sizing: border-box;
+    }
+
+    header nav a::after {
+        display: none;
+    }
+
+    header nav .donate-button {
+        margin: 4px 0;
+    }
+}
+
+/* =========================================
+   HOME HERO
+========================================= */
+
+.home-hero{
+
+    position:relative;
+
+   height:calc(100vh - 90px);
+
+    min-height:0;
+
+    background-image:url("images/tri-cities-map.png");
+
+    background-size:cover;
+
+    background-position:center center;
+
+    background-repeat:no-repeat;
+
+    padding:220px 8% 40px;
+
+    overflow:hidden;
+
+}
+
+
+/* =========================================
+   SOFT FADE BEHIND HERO CONTENT
+========================================= */
+
+.home-hero::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    bottom:0;
+
+    width:60%;
+
+    height:52%;
+
+    background:radial-gradient(
+        ellipse at 35% 65%,
+        rgba(248,244,236,.88) 0%,
+        rgba(248,244,236,.62) 35%,
+        rgba(248,244,236,.28) 58%,
+        rgba(248,244,236,0) 82%
+    );
+
+    filter:blur(10px);
+
+    pointer-events:none;
+
+    z-index:1;
+
+}
+
+
+/* =========================================
+   HERO CONTENT
+========================================= */
+
+.hero-overlay{
+
+    position:absolute;
+
+    left:9%;
+
+    bottom:11%;
+
+    width:520px;
+
+    max-width:42%;
+
+    text-align:left;
+
+    z-index:2;
+
+}
+
+
+/* =========================================
+   HERO TITLE
+========================================= */
+
+.hero-text{
+
+    position:relative;
+
+    padding:20px 10px;
+
+}
+
+
+.hero-text::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:-35px -50px;
+
+    background:radial-gradient(
+        ellipse,
+        rgba(255,255,255,.82) 0%,
+        rgba(255,255,255,.48) 42%,
+        rgba(255,255,255,0) 75%
+    );
+
+    filter:blur(22px);
+
+    z-index:-1;
+
+}
+
+
+/* =========================================
+   TITLE
+========================================= */
+
+.hero-text h1{
+
+    font-size:4.5rem;
+
+    line-height:1;
+
+    color:var(--green);
+
+    margin-bottom:18px;
+
+    font-weight:700;
+
+    white-space:nowrap;
+
+}
+
+
+/* =========================================
+   DIVIDER
+========================================= */
+
+.hero-divider{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:flex-start;
+
+    gap:14px;
+
+    margin-bottom:25px;
+
+}
+
+.hero-divider span{
+
+    width:55px;
+
+    height:2px;
+
+    background:var(--tan);
+
+}
+
+.hero-divider p{
+
+    color:var(--green);
+
+    font-size:1.05rem;
+
+    font-weight:600;
+
+}
+
+
+/* =========================================
+   SERVICE AREA
+========================================= */
+
+.service-area{
+
+    margin-bottom:28px;
+
+}
+
+.service-title{
+
+    color:var(--red);
+
+    font-size:.72rem;
+
+    letter-spacing:4px;
+
+    font-weight:700;
+
+    margin-bottom:10px;
+
+}
+
+.service-area h3{
+
+    font-size:1.55rem;
+
+    line-height:1.2;
+
+    color:var(--green);
+
+    margin-bottom:12px;
+
+}
+
+.cities{
+
+    font-size:1rem;
+
+    line-height:1.65;
+
+    color:#5f625e;
+
+}
+
+
+/* =========================================
+   HERO BUTTONS
+========================================= */
+
+.hero-buttons{
+
+    display:flex;
+
+    justify-content:flex-start;
+
+    align-items:center;
+
+    gap:14px;
+
+    flex-wrap:wrap;
+
+}
+
+.hero-buttons .btn{
+
+    padding:16px 25px;
+
+    font-size:.95rem;
+
+    border-radius:14px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.14);
+
+}
+
+.hero-buttons .btn:hover{
+
+    transform:translateY(-3px);
+
+}
+
+/* ---------- Donate Button ---------- */
+
+.hero-buttons .btn-secondary{
+
+    background:var(--tan);
+
+    color:var(--green);
+
+    border:2px solid var(--tan);
+
+    opacity:1;
+
+}
+
+.hero-buttons .btn-secondary:hover{
+
+    background:var(--tan);
+
+    color:var(--green);
+
+}
+
+
+
+/* =========================================
+   HOME HERO — TABLET
+========================================= */
+
+@media (min-width: 701px) and (max-width: 800px) {
+
+    .hero-overlay {
+    left: 6%;
+    bottom: 10%;
+    width: 70%;
+    max-width: 70%;
+}
+
+    .hero-text {
+        padding: 20px 5px;
+    }
+
+    .hero-text h1 {
+        font-size: 3.8rem;
+        line-height: 1;
+        white-space: normal;
+    }
+
+    .hero-divider {
+        gap: 14px;
+    }
+
+    .hero-divider span {
+        width: 45px;
+    }
+
+    .hero-divider p {
+        font-size: 1.1rem;
+    }
+
+    .service-area h3 {
+        font-size: 1.5rem;
+    }
+
+    .cities {
+        font-size: 1rem;
+    }
+
+    .hero-buttons {
+        gap: 14px;
+    }
+
+    .hero-buttons .btn {
+        padding: 15px 24px;
+        font-size: 1rem;
+    }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width:700px){
+
+    .home-hero{
+
+        height:auto;
+
+        min-height:850px;
+
+        background-position:center top;
+
+    }
+
+    .home-hero::after{
+
+        width:100%;
+
+        height:65%;
+
+        background:radial-gradient(
+            ellipse at 50% 70%,
+            rgba(248,244,236,.96) 0%,
+            rgba(248,244,236,.72) 42%,
+            rgba(248,244,236,0) 80%
+        );
+
+    }
+
+    .hero-overlay{
+
+        left:6%;
+
+        bottom:5%;
+
+        width:88%;
+
+        max-width:none;
+
+        text-align:center;
+
+    }
+
+    .hero-text{
+
+        padding:20px 5px;
+
+    }
+
+    .hero-text h1{
+
+    font-size:2.7rem;
+
+    line-height:1;
+
+    white-space:normal;
+
+}
+
+    .hero-divider{
+
+        justify-content:center;
+
+    }
+
+    .hero-divider span{
+
+        width:40px;
+
+    }
+
+    .service-area h3{
+
+        font-size:1.35rem;
+
+    }
+
+    .cities{
+
+        font-size:.95rem;
+
+    }
+
+    .hero-buttons{
+
+        justify-content:center;
+
+    }
+
+    .hero-buttons .btn{
+
+        width:100%;
+
+    }
+
+}
+
+/* =========================================
+   SHARED PAGE HERO
+========================================= */
+
+.page-hero{
+
+    background:var(--cream);
+
+    text-align:center;
+
+    padding:90px 8% 70px;
+
+}
+
+.page-hero-content{
+
+    max-width:800px;
+
+    margin:auto;
+
+}
+
+.page-hero h1{
+
+    margin:15px 0 20px;
+
+}
+
+.page-hero .section-description{
+
+    max-width:720px;
+
+}
+
+/* =========================================
+   SHARED PAGE HERO
+========================================= */
+
+.page-hero{
+
+    background:var(--cream);
+
+    text-align:center;
+
+    padding:90px 8% 70px;
+
+}
+
+.page-hero-content{
+
+    max-width:800px;
+
+    margin:auto;
+
+}
+
+.page-hero h1{
+
+    margin:15px 0 20px;
+
+}
+
+.page-hero .section-description{
+
+    max-width:720px;
+
+}
+
+
+
+/* =========================================
+   SHARED SECTION HEADERS
+========================================= */
+
+.section-heading{
+
+    text-align:center;
+
+    max-width:750px;
+
+    margin:0 auto 70px;
+
+}
+
+.section-heading h2{
+
+    margin:15px 0 20px;
+
+}
+
+.section-heading p{
+
+    color:var(--gray);
+
+}
+
+
+
+/* =========================================
+   GENERAL CARD
+========================================= */
+
+.card{
+
+    background:white;
+
+    border-radius:20px;
+
+    padding:40px;
+
+    box-shadow:var(--shadow-sm);
+
+    transition:var(--transition);
+
+}
+
+.card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:var(--shadow-md);
+
+}
+
+/* =========================================
+   OUR STORY PAGE
+========================================= */
+
+.our-story-page {
+    background: #f8f5ef;
+    color: #333;
+}
+
+
+/* =========================================
+   OUR STORY CONTENT
+========================================= */
+
+.our-story-content {
+    padding: 90px 40px 70px;
+    box-sizing: border-box;
+}
+
+
+.our-story-container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+
+.our-story-container h1 {
+    margin: 0 0 55px;
+
+    font-family: "Poppins", sans-serif;
+    font-size: 3rem;
+    line-height: 1.1;
+    font-weight: 700;
+
+    color: #174b38;
+}
+
+
+/* =========================================
+   STORY TEXT
+========================================= */
+
+.our-story-text {
+    max-width: 1050px;
+}
+
+
+.our-story-text p {
+    margin: 0 0 45px;
+
+    font-family: "Poppins", sans-serif;
+    font-size: 1.55rem;
+    line-height: 1.78;
+    font-weight: 500;
+
+    color: #333;
+}
+
+
+.our-story-text p:last-child {
+    margin-bottom: 0;
+}
+
+
+/* =========================================
+   EMPHASIZED TEXT
+========================================= */
+
+.our-story-text strong {
+    font-weight: 700;
+    color: #174b38;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 800px) {
+
+    .our-story-content {
+        padding: 110px 25px 60px;
+    }
+
+    .our-story-container h1 {
+        margin-bottom: 40px;
+        font-size: 2.4rem;
+    }
+
+    .our-story-text p {
+        font-size: 1.1rem;
+        line-height: 1.75;
+        margin-bottom: 35px;
+    }
+
+}
+
+
+@media (max-width: 500px) {
+
+    .our-story-content {
+        padding: 100px 20px 50px;
+    }
+
+    .our-story-container h1 {
+        font-size: 2.1rem;
+    }
+
+    .our-story-text p {
+        font-size: 1rem;
+        line-height: 1.7;
+    }
+
+}
+
+/* =========================================
+   MEET THE TEAM
+========================================= */
+
+.team-section{
+
+    padding:100px 8%;
+
+    text-align:center;
+
+}
+
+.team-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+
+    gap:35px;
+
+    margin-top:70px;
+
+}
+
+.team-card{
+
+    background:white;
+
+    border-radius:24px;
+
+    padding:45px 35px;
+
+    text-align:center;
+
+    box-shadow:var(--shadow-sm);
+
+    transition:var(--transition);
+
+}
+
+.team-card:hover{
+
+    background:var(--green);
+
+    transform:translateY(-10px);
+
+    box-shadow:var(--shadow-lg);
+
+}
+
+.team-card img{
+
+    width:150px;
+
+    height:150px;
+
+    object-fit:cover;
+
+    border-radius:50%;
+
+    border:5px solid var(--tan);
+
+    margin:0 auto 25px;
+
+    transition:var(--transition);
+
+}
+
+.team-card:hover img{
+
+    transform:scale(1.05);
+
+    border-color:#E6C58A;
+
+}
+
+.team-card h3{
+
+    margin-bottom:8px;
+
+    transition:var(--transition);
+
+}
+
+.team-card:hover h3{
+
+    color:white;
+
+}
+
+.team-role{
+
+    color:var(--tan);
+
+    font-weight:600;
+
+    margin-bottom:20px;
+
+    text-transform:uppercase;
+
+    letter-spacing:1px;
+
+    font-size:.9rem;
+
+}
+
+.team-card p{
+
+    color:var(--gray);
+
+    line-height:1.8;
+
+    transition:var(--transition);
+
+}
+
+.team-card:hover p{
+
+    color:rgba(255,255,255,.92);
+
+}
+
+/* =========================================
+   NOMINATION PAGE
+========================================= */
+
+.nomination-form{
+
+    padding:40px 8% 100px;
+
+}
+
+.nomination-form-content{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:50px;
+
+}
+
+
+/* ---------- Top Row ---------- */
+
+.top-form-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:40px;
+
+}
+
+
+/* ---------- Cards ---------- */
+
+.form-card{
+
+    background:var(--white);
+
+    border-radius:24px;
+
+    padding:50px;
+
+    border:1px solid rgba(0,0,0,.05);
+
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+
+    transition:var(--transition);
+
+}
+
+.form-card:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:0 18px 40px rgba(0,0,0,.12);
+
+    border-color:rgba(27,67,50,.12);
+
+}
+
+.form-card h2{
+
+    font-size:2.2rem;
+
+    color:var(--green);
+
+    margin:12px 0 35px;
+
+    padding-bottom:20px;
+
+    border-bottom:1px solid #EFEFEF;
+
+}
+
+
+/* ---------- Form Groups ---------- */
+
+.form-group{
+
+    margin-bottom:30px;
+
+}
+
+.form-group:last-child{
+
+    margin-bottom:0;
+
+}
+
+.form-group label{
+
+    display:block;
+
+    margin-bottom:10px;
+
+    font-size:.95rem;
+
+    font-weight:600;
+
+    color:var(--green);
+
+}
+
+
+
+/* ---------- Inputs ---------- */
+
+.form-group input,
+.form-group textarea,
+.form-group select{
+
+    width:100%;
+
+    padding:18px 22px;
+
+    border:1px solid #E7E7E7;
+
+    border-radius:14px;
+
+    background:#FAFAFA;
+
+    font-size:1rem;
+
+    font-family:'Poppins',sans-serif;
+
+    transition:all .3s ease;
+
+}
+
+/* ---------- Placeholders ---------- */
+
+.form-group input::placeholder,
+.form-group textarea::placeholder{
+
+    color:#A8A8A8;
+
+    font-size:.95rem;
+
+}
+
+
+/* ---------- Focus ---------- */
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus{
+
+    outline:none;
+
+    background:white;
+
+    border-color:var(--green);
+
+    box-shadow:0 0 0 4px rgba(27,67,50,.08);
+
+}
+
+
+
+/* ---------- Textareas ---------- */
+
+.form-group textarea{
+
+    min-height:220px;
+
+    resize:vertical;
+
+    line-height:1.8;
+
+}
+
+
+
+/* ---------- City Row ---------- */
+
+.city-row{
+
+    display:grid;
+
+    grid-template-columns:2fr 1fr 1fr;
+
+    gap:15px;
+
+}
+
+/* =========================================
+   NOMINATION PAGE - CONTENT CARDS
+========================================= */
+
+/* ---------- Full Width Cards ---------- */
+
+.form-card.full-width{
+
+    width:100%;
+
+}
+
+/* ---------- Story & Support ---------- */
+
+.form-card textarea{
+
+    min-height:220px;
+
+}
+
+.form-description{
+
+    color:var(--gray);
+
+    margin:15px 0 30px;
+
+    line-height:1.8;
+
+    max-width:850px;
+
+}
+
+/* ---------- Bottom Row ---------- */
+
+.bottom-form-grid{
+
+    display:grid;
+
+    grid-template-columns:2fr 1fr;
+
+    gap:40px;
+
+    align-items:stretch;
+
+}
+
+/* ---------- Confidentiality Card ---------- */
+
+.info-card{
+
+    background:linear-gradient(
+        180deg,
+        var(--green),
+        var(--green-light)
+    );
+
+    color:white;
+
+    border-radius:24px;
+
+    padding:50px;
+
+    box-shadow:0 14px 35px rgba(0,0,0,.15);
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+}
+
+.info-card h2{
+
+    color:white;
+
+    margin:15px 0 25px;
+
+}
+
+.info-card p{
+
+    color:rgba(255,255,255,.9);
+
+    line-height:1.9;
+
+}
+
+/* ---------- Agreement ---------- */
+
+.checkbox-group{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:18px;
+
+    margin-top:10px;
+
+}
+
+.checkbox{
+
+    display:flex;
+
+    align-items:flex-start;
+
+    gap:15px;
+
+    line-height:1.8;
+
+}
+
+.checkbox input{
+
+    margin-top:5px;
+
+    transform:scale(1.2);
+
+    accent-color:var(--green);
+
+}
+
+/* ---------- Submit Button ---------- */
+
+.submit-section{
+
+    text-align:center;
+
+    margin-top:70px;
+
+    margin-bottom:90px;
+
+}
+
+.submit-section .btn{
+
+    min-width:320px;
+
+    padding:20px 60px;
+
+    font-size:1.05rem;
+
+    border-radius:14px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.12);
+
+    transition:var(--transition);
+
+}
+
+.submit-section .btn:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:0 18px 35px rgba(0,0,0,.18);
+
+}
+/* =========================================
+   NOMINATION PAGE RESPONSIVE
+========================================= */
+
+@media (max-width:992px){
+
+    .top-form-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .bottom-form-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .city-row{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
+
+@media (max-width:768px){
+
+    .nomination-form{
+
+        padding:20px 6% 80px;
+
+    }
+
+    .nomination-form-content{
+
+        gap:25px;
+
+    }
+
+    .form-card{
+
+        padding:30px 25px;
+
+    }
+
+    .info-card{
+
+        padding:30px 25px;
+
+    }
+
+    .form-card h2,
+
+    .info-card h2{
+
+        font-size:2rem;
+
+    }
+
+    .form-group input,
+
+    .form-group textarea,
+
+    .form-group select{
+
+        font-size:16px;
+
+    }
+
+    .submit-section .btn{
+
+        width:100%;
+
+    }
+
+}
+
+@media (max-width:500px){
+
+    .page-hero{
+
+        padding:70px 6% 50px;
+
+    }
+
+    .page-hero h1{
+
+        font-size:2.6rem;
+
+    }
+
+    .page-hero .section-description{
+
+        font-size:1rem;
+
+    }
+
+    .form-card{
+
+        border-radius:18px;
+
+    }
+
+    .info-card{
+
+        border-radius:18px;
+
+    }
+
+}
+
+/* ========================================= */
+/* SPONSORS PAGE */
+/* ========================================= */
+
+.sponsors-section {
+    background: #f8f5ef;
+    padding: 100px 8%;
+}
+
+.sponsors-layout {
+    max-width: 1200px;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+
+    align-items: center;
+}
+
+
+/* ========================================= */
+/* LEFT SIDE */
+/* ========================================= */
+
+.sponsors-intro {
+    max-width: 560px;
+}
+
+.sponsors-intro h1 {
+    margin: 20px 0 25px;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 64px;
+    line-height: 0.95;
+    color: #174b38;
+}
+
+.sponsors-description {
+    max-width: 540px;
+    margin: 25px 0 35px;
+
+    font-family: "Poppins", sans-serif;
+    font-size: 17px;
+    line-height: 1.7;
+    color: #777;
+}
+
+.sponsor-cta {
+    display: inline-block;
+}
+
+
+/* ========================================= */
+/* RIGHT SIDE */
+/* ========================================= */
+
+.sponsors-display {
+    width: 100%;
+}
+
+.sponsors-display-heading {
+    margin-bottom: 35px;
+}
+
+.sponsors-display-heading .heading-divider {
+    margin-top: 10px;
+}
+
+.sponsors-display-heading .section-label {
+    margin-bottom: 12px;
+
+    font-family: "Cormorant Garamond", serif;
+    font-size: 42px;
+    font-weight: 600;
+    letter-spacing: 0;
+    text-transform: none;
+    white-space: nowrap;
+    color: #174b38;
+}
+
+.sponsors-display-heading {
+    text-align: center;
+}
+
+.heading-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+    margin: 18px auto 35px;
+}
+
+.heading-divider span {
+    display: block;
+    width: 56px;
+    height: 2px;
+    background-color: #dfbd86;
+}
+
+.divider-dot {
+    width: 10px;
+    height: 10px;
+    background-color: #dfbd86;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+
+/* ========================================= */
+/* SPONSOR CARDS */
+/* ========================================= */
+
+.sponsor-grid {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 20px;
+}
+
+.sponsor-card {
+    min-height: 150px;
+
+    background: #ffffff;
+
+    border-radius: 14px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
+}
+
+.sponsor-card p {
+    margin: 0;
+
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+
+    color: #777;
+}
+
+
+/* ========================================= */
+/* MOBILE */
+/* ========================================= */
+
+@media (max-width: 900px) {
+
+    .sponsors-layout {
+        grid-template-columns: 1fr;
+        gap: 60px;
+    }
+
+    .sponsors-intro h1 {
+        font-size: 52px;
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    .sponsors-section {
+        padding: 70px 6%;
+    }
+
+    .sponsor-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .sponsors-intro h1 {
+        font-size: 46px;
+        line-height: 1;
+    }
+
+    .sponsors-description {
+        max-width: 100%;
+        font-size: 16px;
+    }
+
+    .sponsors-intro .btn {
+        width: 100%;
+        box-sizing: border-box;
+        text-align: center;
+    }
+
+    .sponsors-display-heading .section-label {
+        font-size: 32px;
+        line-height: 1.1;
+        white-space: normal;
+    }
+
+}
+
+/* ========================================= */
+/* MEET THE TEAM PAGE */
+/* ========================================= */
+
+.meet-team-page {
+    background: #f8f5ef;
+    color: #174b38;
+    padding-bottom: 100px;
+}
+
+
+/* ========================================= */
+/* PAGE INTRO */
+/* ========================================= */
+
+.meet-team-hero {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 95px 20px 75px;
+    text-align: center;
+}
+
+.meet-team-label {
+    margin: 0 0 25px;
+
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 0;
+
+    color: #333;
+}
+
+.meet-team-hero h1 {
+    margin: 0;
+
+    font-family: "Cormorant Garamond", serif;
+    font-size: 72px;
+    line-height: 0.95;
+    font-weight: 600;
+
+    color: #174b38;
+}
+
+
+/* ========================================= */
+/* DIVIDER */
+/* ========================================= */
+
+.meet-team-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 18px;
+
+    margin: 30px auto;
+}
+
+.meet-team-divider span {
+    display: block;
+
+    width: 56px;
+    height: 2px;
+
+    background: #dfbd86;
+}
+
+.meet-team-divider-dot {
+    width: 10px;
+    height: 10px;
+
+    border-radius: 50%;
+
+    background: #dfbd86;
+
+    flex-shrink: 0;
+}
+
+
+/* ========================================= */
+/* INTRO TEXT */
+/* ========================================= */
+
+.meet-team-description {
+    max-width: 720px;
+
+    margin: 0 auto;
+
+    font-family: "Poppins", sans-serif;
+    font-size: 17px;
+    line-height: 1.7;
+
+    color: #777;
+}
+
+
+/* ========================================= */
+/* TEAM SECTION */
+/* ========================================= */
+
+.meet-team-members {
+    max-width: 1300px;
+
+    margin: 0 auto;
+
+    padding: 0 30px 0;
+}
+
+.meet-team-heading {
+    text-align: center;
+
+    margin-bottom: 30px;
+}
+
+.meet-team-heading-label {
+    margin: 0 0 15px;
+
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+
+    color: #333;
+}
+
+.meet-team-heading h2 {
+    margin: 0;
+
+    font-family: "Cormorant Garamond", serif;
+    font-size: 56px;
+    line-height: 1;
+
+    font-weight: 600;
+
+    color: #174b38;
+}
+
+
+/* ========================================= */
+/* TEAM GRID */
+/* ========================================= */
+
+.meet-team-grid {
+    display: grid;
+
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+
+    gap: 25px;
+}
+
+
+/* ========================================= */
+/* TEAM CARD */
+/* ========================================= */
+
+.meet-team-card {
+    background: #ffffff;
+
+    border-radius: 16px;
+
+    overflow: hidden;
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.meet-team-card:hover {
+    transform: translateY(-4px);
+
+    box-shadow: 0 14px 35px rgba(0, 0, 0, 0.08);
+}
+
+
+/* ========================================= */
+/* TEAM PHOTO */
+/* ========================================= */
+
+.meet-team-photo {
+    width: calc(100% - 30px);
+    height: 190px;
+
+    margin: 15px auto 0;
+
+    overflow: hidden;
+
+    background: #eee7db;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.meet-team-photo img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+}
+
+.meet-team-photo-placeholder {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 20px;
+
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+
+    color: #999;
+}
+
+
+/* ========================================= */
+/* TEAM INFORMATION */
+/* ========================================= */
+
+.meet-team-info {
+    min-height: 105px;
+
+    padding: 18px 12px 22px;
+
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.meet-team-role {
+    margin: 0 0 8px;
+
+    font-family: "Poppins", sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+
+    letter-spacing: 1px;
+    text-transform: uppercase;
+
+    color: #777;
+}
+
+.meet-team-name {
+    margin: 0;
+
+    font-family: "Cormorant Garamond", serif;
+    font-size: 27px;
+    line-height: 1;
+
+    font-weight: 600;
+
+    color: #174b38;
+}
+
+/* =========================================
+   FOOTER
+========================================= */
+
+footer{
+
+    background:var(--green);
+
+    color:white;
+
+    padding:70px 8%;
+
+    margin-top:0;
+
+}
+
+.footer-content{
+
+    max-width:1200px;
+
+    margin:0 auto;
+
+    text-align:center;
+
+}
+
+.footer-content h3{
+
+    font-size:2.2rem;
+
+    color:white;
+
+    margin-bottom:15px;
+
+}
+
+.footer-content p{
+
+    color:rgba(255,255,255,.85);
+
+    line-height:1.8;
+
+    margin-bottom:15px;
+
+}
+
+.footer-divider{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:15px;
+
+    margin:30px 0;
+
+}
+
+.footer-divider span{
+
+    width:90px;
+
+    height:1px;
+
+    background:rgba(255,255,255,.3);
+
+}
+
+.divider-dot{
+
+    width:10px;
+
+    height:10px;
+
+    border-radius:50%;
+
+    background:var(--tan);
+
+}
+
+.copyright{
+
+    margin-top:35px;
+
+    font-size:.9rem;
+
+    color:rgba(255,255,255,.65);
+
+}
+
+@media (max-width: 1000px) {
+
+    .meet-team-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    .meet-team-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+/* =========================================
+   DONATE PAGE
+========================================= */
+
+.donate-page {
+    background: #f8f5ef;
+    color: #333;
+}
+
+
+/* =========================================
+   DONATE HERO
+========================================= */
+
+.donate-hero {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 105px 40px 60px;
+}
+
+.donate-label {
+    margin: 0 0 22px;
+    font-family: "Poppins", sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: .5px;
+    color: #333;
+}
+
+.donate-hero h1 {
+    max-width: 800px;
+    margin: 0;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 76px;
+    line-height: .95;
+    font-weight: 600;
+    color: #174b38;
+}
+
+.donate-divider {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin: 28px 0;
+}
+
+.donate-divider span {
+    display: block;
+    width: 55px;
+    height: 2px;
+    background: #dfbd86;
+}
+
+.donate-divider div {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: #dfbd86;
+    flex-shrink: 0;
+}
+
+.donate-intro {
+    max-width: 850px;
+    margin: 0 0 30px;
+    font-family: "Poppins", sans-serif;
+    font-size: 17px;
+    line-height: 1.7;
+    color: #555;
+}
+
+
+/* =========================================
+   DONATE BUTTON
+========================================= */
+
+.donate-primary-button {
+    display: inline-block;
+    padding: 15px 32px;
+    border-radius: 30px;
+    background: #dfbd86;
+    color: white;
+    font-family: "Poppins", sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: transform .25s ease, background .25s ease;
+}
+
+.donate-primary-button:hover {
+    background: #d2aa6d;
+    color: white;
+    transform: translateY(-2px);
+}
+
+
+/* =========================================
+   IMPACT SECTION
+========================================= */
+
+.donate-impact {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 80px 40px 120px;
+}
+
+.donate-section-heading {
+    text-align: center;
+    margin-bottom: 55px;
+}
+
+.donate-section-heading > p {
+    margin: 0 0 12px;
+    font-family: "Poppins", sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: .5px;
+    color: #333;
+}
+
+.donate-section-heading h2 {
+    margin: 0;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 58px;
+    line-height: 1;
+    font-weight: 600;
+    color: #174b38;
+}
+
+.donate-section-heading .donate-divider {
+    justify-content: center;
+    margin: 25px auto 0;
+}
+
+
+/* =========================================
+   IMPACT CARDS
+========================================= */
+
+.donate-impact-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.donate-impact-card {
+    padding: 40px 32px;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, .05);
+    transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.donate-impact-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 14px 35px rgba(0, 0, 0, .08);
+}
+
+.donate-card-number {
+    margin-bottom: 22px;
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: #dfbd86;
+}
+
+.donate-impact-card h3 {
+    margin: 0 0 15px;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 32px;
+    line-height: 1;
+    font-weight: 600;
+    color: #174b38;
+}
+
+.donate-impact-card p {
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+    font-size: 15px;
+    line-height: 1.7;
+    color: #666;
+}
+
+
+/* =========================================
+   DONATE NOW SECTION
+========================================= */
+
+.donate-now {
+    background: #174b38;
+    padding: 100px 40px;
+}
+
+.donate-now-content {
+    max-width: 850px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.donate-now .donate-label {
+    color: #dfbd86;
+}
+
+.donate-now h2 {
+    margin: 0;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 64px;
+    line-height: .95;
+    font-weight: 600;
+    color: white;
+}
+
+.donate-now p:not(.donate-label) {
+    max-width: 700px;
+    margin: 28px auto 32px;
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, .8);
+}
+
+
+/* =========================================
+   OTHER WAYS TO HELP
+========================================= */
+
+.other-ways {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 110px 40px;
+}
+
+.other-ways-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.other-way-card {
+    display: block;
+    padding: 35px 30px;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, .05);
+    text-decoration: none;
+    transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.other-way-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 14px 35px rgba(0, 0, 0, .08);
+}
+
+.other-way-card h3 {
+    margin: 0 0 14px;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 31px;
+    line-height: 1;
+    font-weight: 600;
+    color: #174b38;
+}
+
+.other-way-card p {
+    margin: 0 0 20px;
+    font-family: "Poppins", sans-serif;
+    font-size: 15px;
+    line-height: 1.7;
+    color: #666;
+}
+
+.other-way-card span {
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: #dfbd86;
+}
+
+
+/* =========================================
+   THANK YOU SECTION
+========================================= */
+
+.donate-thank-you {
+    padding: 70px 40px 75px;
+    text-align: center;
+    background: #eee7db;
+}
+
+.donate-thank-you .donate-label {
+    color: #333;
+}
+
+.donate-thank-you h2 {
+    max-width: 800px;
+    margin: 0 auto;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 62px;
+    line-height: .95;
+    font-weight: 600;
+    color: #174b38;
+}
+
+.donate-thank-you p:not(.donate-label) {
+    max-width: 650px;
+    margin: 25px auto 30px;
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    line-height: 1.7;
+    color: #666;
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+footer {
+    background: var(--green);
+    color: white;
+    padding: 70px 40px 25px;
+    margin-top: 0;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 80px;
+    align-items: start;
+}
+
+
+/* FOOTER BRAND */
+
+.footer-brand {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.footer-brand img {
+    width: 75px;
+    height: 75px;
+    max-width: 75px;
+    max-height: 75px;
+    object-fit: contain;
+    display: block;
+    margin-bottom: 18px;
+}
+
+.footer-brand h2 {
+    margin: 0;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: white;
+}
+
+.footer-brand p {
+    margin: 6px 0 0;
+    font-family: "Poppins", sans-serif;
+    font-size: .9rem;
+    color: var(--tan);
+}
+
+
+/* FOOTER LINKS */
+
+.footer-links {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.footer-links h3 {
+    margin: 0 0 12px;
+    font-family: "Poppins", sans-serif;
+    font-size: .9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--tan);
+}
+
+.footer-links a {
+    width: fit-content;
+    font-family: "Poppins", sans-serif;
+    font-size: .9rem;
+    color: white;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.footer-links a:hover {
+    color: var(--tan);
+}
+
+
+/* FOOTER BOTTOM */
+
+.footer-bottom {
+    max-width: 1200px;
+    margin: 55px auto 0;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, .15);
+    text-align: center;
+}
+
+.footer-bottom p {
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+    font-size: .8rem;
+    color: rgba(255, 255, 255, .7);
+}
+
+
+/* =========================================
+   DONATE PAGE — TABLET
+========================================= */
+
+@media (max-width: 900px) {
+
+    .donate-hero {
+        padding: 85px 30px 90px;
+    }
+
+    .donate-hero h1 {
+        font-size: 64px;
+    }
+
+    .donate-impact {
+        padding: 70px 30px 90px;
+    }
+
+    .donate-impact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .donate-section-heading h2 {
+        font-size: 50px;
+    }
+
+    .donate-now {
+        padding: 85px 30px;
+    }
+
+    .donate-now h2 {
+        font-size: 56px;
+    }
+
+    .other-ways {
+        padding: 90px 30px;
+    }
+
+    .other-ways-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .donate-thank-you h2 {
+        font-size: 54px;
+    }
+
+    .footer-container {
+        grid-template-columns: 1fr 1fr;
+        gap: 45px;
+    }
+
+    .footer-brand {
+        grid-column: 1 / -1;
+    }
+}
+
+
+/* =========================================
+   DONATE PAGE — MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+    .donate-hero {
+        padding: 70px 20px 75px;
+    }
+
+    .donate-hero h1 {
+        font-size: 50px;
+    }
+
+    .donate-intro {
+        font-size: 16px;
+    }
+
+    .donate-impact {
+        padding: 60px 20px 75px;
+    }
+
+    .donate-section-heading h2 {
+        font-size: 43px;
+    }
+
+    .donate-impact-card {
+        padding: 32px 25px;
+    }
+
+    .donate-now {
+        padding: 70px 20px;
+    }
+
+    .donate-now h2 {
+        font-size: 48px;
+    }
+
+    .donate-now p:not(.donate-label) {
+        font-size: 15px;
+    }
+
+    .other-ways {
+        padding: 70px 20px;
+    }
+
+    .other-way-card {
+        padding: 30px 25px;
+    }
+
+    .donate-thank-you {
+        padding: 75px 20px 85px;
+    }
+
+    .donate-thank-you h2 {
+        font-size: 46px;
+    }
+
+    footer {
+        padding: 55px 25px 20px;
+    }
+
+    .footer-container {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .footer-brand {
+        grid-column: auto;
+    }
+
+    .footer-bottom {
+        margin-top: 40px;
+    }
+
+}
+
+/* =========================================
+   VOLUNTEER PAGE
+========================================= */
+
+.volunteer-page {
+    background: #f8f5ef;
+    color: #333;
+}
+
+
+/* =========================================
+   VOLUNTEER INTRO
+========================================= */
+
+.volunteer-intro {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 105px 40px 30px;
+    text-align: center;
+}
+
+.volunteer-label {
+    margin: 0 0 18px;
+    font-family: "Poppins", sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 5px;
+    color: #b52f2f;
+}
+
+.volunteer-intro h1 {
+    margin: 0;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 72px;
+    line-height: .95;
+    font-weight: 600;
+    color: #174b38;
+}
+
+.volunteer-intro-text {
+    max-width: 800px;
+    margin: 18px auto 0;
+    font-family: "Poppins", sans-serif;
+    font-size: 17px;
+    line-height: 1.6;
+    color: #666;
+}
+
+.volunteer-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    margin: 20px auto 0;
+}
+
+.volunteer-divider span {
+    display: block;
+    width: 55px;
+    height: 2px;
+    background: #dfbd86;
+}
+
+.volunteer-divider div {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: #dfbd86;
+    flex-shrink: 0;
+}
+
+
+/* =========================================
+   MAIN VOLUNTEER SECTIONS
+========================================= */
+
+.volunteer-section,
+.volunteer-full-section,
+.volunteer-submit-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 25px 40px;
+}
+
+.volunteer-section {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 35px;
+    align-items: stretch;
+}
+
+
+/* =========================================
+   FORM CARDS
+========================================= */
+
+.volunteer-form-card,
+.volunteer-submit-card {
+    background: white;
+    border-radius: 22px;
+    padding: 55px 52px;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, .07);
+    box-sizing: border-box;
+}
+
+.volunteer-section-label {
+    margin: 0 0 18px;
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 5px;
+    color: #b52f2f;
+}
+
+.volunteer-form-card h2,
+.volunteer-submit-card h2 {
+    margin: 0;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 52px;
+    line-height: 1;
+    font-weight: 600;
+    color: #174b38;
+}
+
+.volunteer-line {
+    width: 100%;
+    height: 1px;
+    margin: 25px 0 35px;
+    background: #e5e1da;
+}
+
+
+/* =========================================
+   INFORMATION GRID
+========================================= */
+
+.volunteer-form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 28px 25px;
+}
+
+.volunteer-field {
+    display: flex;
+    flex-direction: column;
+}
+
+.volunteer-field-full {
+    grid-column: 1 / -1;
+}
+
+.volunteer-field label {
+    margin-bottom: 10px;
+    font-family: "Poppins", sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    color: #174b38;
+}
+
+.volunteer-field input,
+.volunteer-field select,
+.volunteer-field textarea {
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid #dedede;
+    border-radius: 14px;
+    background: #fafafa;
+    padding: 17px 20px;
+    font-family: "Poppins", sans-serif;
+    font-size: 15px;
+    color: #333;
+    outline: none;
+    transition: border-color .25s ease, box-shadow .25s ease, background .25s ease;
+}
+
+.volunteer-field input,
+.volunteer-field select {
+    height: 58px;
+}
+
+.volunteer-field textarea {
+    min-height: 125px;
+    resize: vertical;
+}
+
+.volunteer-field input::placeholder,
+.volunteer-field textarea::placeholder {
+    color: #aaa;
+}
+
+.volunteer-field input:focus,
+.volunteer-field select:focus,
+.volunteer-field textarea:focus {
+    border-color: #174b38;
+    background: white;
+    box-shadow: 0 0 0 3px rgba(23, 75, 56, .08);
+}
+
+
+/* =========================================
+   CITY / STATE / ZIP
+========================================= */
+
+.location-fields {
+    display: grid;
+    grid-template-columns: 1.5fr .8fr .8fr;
+    gap: 10px;
+}
+
+.location-fields input {
+    min-width: 0;
+}
+
+
+/* =========================================
+   YOUR TIME MATTERS
+========================================= */
+
+.volunteer-info-card {
+    padding: 55px 45px;
+    border-radius: 22px;
+    background: #174b38;
+    color: white;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, .10);
+    box-sizing: border-box;
+}
+
+.volunteer-info-card .volunteer-section-label {
+    color: #dfbd86;
+}
+
+.volunteer-info-card h2 {
+    margin: 0;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 60px;
+    line-height: .9;
+    font-weight: 600;
+    color: white;
+}
+
+.volunteer-info-line {
+    width: 45px;
+    height: 3px;
+    margin: 25px 0 30px;
+    background: #dfbd86;
+}
+
+.volunteer-info-card > p:last-child {
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, .9);
+}
+
+
+/* =========================================
+   INSTRUCTIONS
+========================================= */
+
+.volunteer-instruction {
+    margin: 10px 0 25px;
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    color: #777;
+}
+
+
+/* =========================================
+   VOLUNTEER OPTIONS
+========================================= */
+
+.volunteer-options,
+.availability-options {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+}
+
+.volunteer-option {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    min-height: 62px;
+    padding: 12px 15px;
+    border: 1px solid #dedede;
+    border-radius: 12px;
+    background: #fafafa;
+    box-sizing: border-box;
+    cursor: pointer;
+    transition: border-color .25s ease, background .25s ease, transform .25s ease;
+}
+
+.volunteer-option:hover {
+    border-color: #dfbd86;
+    background: #fffdf9;
+    transform: translateY(-1px);
+}
+
+.volunteer-option input[type="checkbox"],
+.volunteer-option input[type="radio"] {
+    width: 18px;
+    height: 18px;
+    margin: 0;
+    flex-shrink: 0;
+    accent-color: #174b38;
+    cursor: pointer;
+}
+
+.volunteer-option > span {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: #174b38;
+}
+
+.volunteer-option small {
+    font-size: 11px;
+    font-weight: 400;
+    color: #888;
+}
+
+
+/* =========================================
+   OTHER OPTION
+========================================= */
+
+.volunteer-option-other {
+    grid-column: 1 / -1;
+}
+
+.volunteer-option-other > input[type="text"] {
+    flex: 1;
+    min-width: 0;
+    height: 42px;
+    padding: 10px 14px;
+    border: 1px solid #dedede;
+    border-radius: 10px;
+    background: white;
+    font-family: "Poppins", sans-serif;
+    font-size: 13px;
+    outline: none;
+    box-sizing: border-box;
+}
+
+
+/* =========================================
+   AVAILABILITY
+========================================= */
+
+.availability-options {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.availability-question {
+    margin: 30px 0 15px;
+    font-family: "Poppins", sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    color: #174b38;
+}
+
+
+/* =========================================
+   SUBMIT SECTION
+========================================= */
+
+.volunteer-submit-section {
+    padding-top: 25px;
+    padding-bottom: 80px;
+}
+
+.volunteer-submit-card {
+    text-align: left;
+}
+
+.agreement {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-top: 14px;
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #444;
+    cursor: pointer;
+}
+
+.agreement input {
+    width: 18px;
+    height: 18px;
+    margin: 2px 0 0;
+    flex-shrink: 0;
+    accent-color: #174b38;
+    cursor: pointer;
+}
+
+.volunteer-submit-button {
+    display: block;
+    width: 330px;
+    margin: 30px auto 0;
+    padding: 16px 25px;
+    border: none;
+    border-radius: 30px;
+    background: #dfbd86;
+    color: #174b38;
+    font-family: "Poppins", sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform .25s ease, background .25s ease, box-shadow .25s ease;
+}
+
+.volunteer-submit-button:hover {
+    background: #d2aa6d;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, .10);
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 1000px) {
+
+    .volunteer-section {
+        grid-template-columns: 1fr;
+    }
+
+    .volunteer-info-card {
+        min-height: auto;
+    }
+
+    .volunteer-options {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .availability-options {
+        grid-template-columns: 1fr 1fr;
+    }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 700px) {
+
+    .volunteer-intro {
+        padding: 105px 20px 35px;
+    }
+
+    .volunteer-intro h1 {
+        font-size: 52px;
+    }
+
+    .volunteer-intro-text {
+        font-size: 15px;
+    }
+
+    .volunteer-section,
+    .volunteer-full-section,
+    .volunteer-submit-section {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .volunteer-form-card,
+    .volunteer-info-card,
+    .volunteer-submit-card {
+        padding: 38px 28px;
+        border-radius: 18px;
+    }
+
+    .volunteer-form-card h2 {
+        font-size: 43px;
+    }
+
+    .volunteer-info-card h2 {
+        font-size: 52px;
+    }
+
+    .volunteer-form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .volunteer-field-full {
+        grid-column: auto;
+    }
+
+    .location-fields {
+        grid-template-columns: 1fr;
+    }
+
+    .volunteer-options,
+    .availability-options {
+        grid-template-columns: 1fr;
+    }
+
+    .volunteer-option-other {
+        display: grid;
+        grid-template-columns: auto auto 1fr;
+    }
+
+    .volunteer-submit-button {
+        width: 100%;
+    }
+
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 450px) {
+
+    .volunteer-intro h1 {
+        font-size: 45px;
+    }
+
+    .volunteer-section-label {
+        font-size: 12px;
+        letter-spacing: 4px;
+    }
+
+    .volunteer-form-card,
+    .volunteer-info-card,
+    .volunteer-submit-card {
+        padding: 32px 22px;
+    }
+
+    .volunteer-form-card h2 {
+        font-size: 39px;
+    }
+
+}
+
+/* =========================================
+   FOUNDING DONORS / DONOR HALL OF FAME
+========================================= */
+
+.founding-donors-page {
+    background: #f8f5ef;
+    color: #333;
+}
+
+
+/* =========================================
+   HALL OF FAME INTRO
+========================================= */
+
+.founding-donors-intro {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 110px 40px 45px;
+    text-align: center;
+}
+
+.founding-donors-label {
+    margin: 0 0 18px;
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 5px;
+    color: #b52f2f;
+}
+
+.founding-donors-intro h1 {
+    margin: 0;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 76px;
+    line-height: .95;
+    font-weight: 600;
+    color: #174b38;
+}
+
+.founding-donors-intro-text {
+    max-width: 780px;
+    margin: 22px auto 0;
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    line-height: 1.7;
+    color: #666;
+}
+
+.founding-donors-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    margin: 25px auto 0;
+}
+
+.founding-donors-divider span {
+    display: block;
+    width: 55px;
+    height: 2px;
+    background: #dfbd86;
+}
+
+.founding-donors-divider div {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: #dfbd86;
+}
+
+
+/* =========================================
+   DONOR TIER SECTION
+========================================= */
+
+.donor-tier-section {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 25px 40px 80px;
+}
+
+.donor-tier-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+
+/* =========================================
+   DONOR TIER CARDS
+========================================= */
+
+.donor-tier-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-height: 555px;
+    padding: 48px 35px 30px;
+    border: 1px solid #ddd3c3;
+    border-radius: 18px;
+    background: #fbf9f4;
+    text-align: center;
+    box-sizing: border-box;
+    overflow: hidden;
+    transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.donor-tier-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, .08);
+}
+
+
+/* =========================================
+   TIER ICON
+========================================= */
+
+.donor-tier-icon {
+    width: 55px;
+    height: 55px;
+    margin: 0 auto 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 35px;
+    color: #c59a50;
+}
+
+
+/* =========================================
+   TIER TEXT
+========================================= */
+
+.donor-tier-label {
+    margin: 0 0 10px;
+    font-family: "Poppins", sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 4px;
+    color: #b52f2f;
+}
+
+.donor-tier-card h2 {
+    margin: 0;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 45px;
+    line-height: .95;
+    font-weight: 600;
+    color: #174b38;
+}
+
+.donor-tier-amount {
+    margin: 18px 0 0;
+    font-family: "Poppins", sans-serif;
+    font-size: 12px;
+    line-height: 1.7;
+    font-weight: 600;
+    letter-spacing: 2px;
+    color: #555;
+}
+
+.donor-tier-line {
+    width: 45px;
+    height: 2px;
+    margin: 22px auto;
+    background: #dfbd86;
+}
+
+.donor-tier-description {
+    max-width: 330px;
+    margin: 0 auto;
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    line-height: 1.7;
+    color: #666;
+}
+
+
+/* =========================================
+   TIER BUTTON
+========================================= */
+
+.donor-tier-button {
+    display: inline-block;
+    width: fit-content;
+    margin: auto auto 25px;
+    padding: 13px 27px;
+    border-radius: 30px;
+    background: #174b38;
+    color: white;
+    font-family: "Poppins", sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: transform .25s ease, background .25s ease;
+}
+
+.donor-tier-button:hover {
+    background: #23634b;
+    color: white;
+    transform: translateY(-2px);
+}
+
+
+/* =========================================
+   FOUNDING SPOTS
+========================================= */
+
+.donor-tier-spots {
+    margin: 0;
+    padding-top: 18px;
+    border-top: 1px solid #ddd3c3;
+    font-family: "Poppins", sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    color: #777;
+}
+
+
+/* =========================================
+   LEGACY CIRCLE
+========================================= */
+
+.donor-tier-legacy {
+    background: #174b38;
+    border-color: #174b38;
+}
+
+.donor-tier-legacy .donor-tier-icon {
+    color: #dfbd86;
+}
+
+.donor-tier-legacy .donor-tier-label {
+    color: #dfbd86;
+}
+
+.donor-tier-legacy h2 {
+    color: white;
+}
+
+.donor-tier-legacy .donor-tier-amount {
+    color: rgba(255, 255, 255, .85);
+}
+
+.donor-tier-legacy .donor-tier-description {
+    color: rgba(255, 255, 255, .85);
+}
+
+.donor-tier-legacy .donor-tier-line {
+    background: #dfbd86;
+}
+
+.donor-tier-legacy .donor-tier-button {
+    background: #dfbd86;
+    color: #174b38;
+}
+
+.donor-tier-legacy .donor-tier-button:hover {
+    background: #e8c996;
+}
+
+.donor-tier-legacy .donor-tier-spots {
+    border-color: rgba(255, 255, 255, .2);
+    color: rgba(255, 255, 255, .7);
+}
+
+
+/* =========================================
+   FOUNDING DONOR CTA
+========================================= */
+
+.founding-donor-cta {
+    padding: 75px 40px 80px;
+    background: #eee7db;
+}
+
+.founding-donor-cta-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 80px;
+    align-items: center;
+}
+
+.founding-donor-cta h2 {
+    margin: 0;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 62px;
+    line-height: .95;
+    font-weight: 600;
+    color: #174b38;
+}
+
+.founding-donor-cta-content > div:first-child > p:not(.founding-donors-label) {
+    max-width: 620px;
+    margin: 22px 0 30px;
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    line-height: 1.7;
+    color: #666;
+}
+
+
+/* =========================================
+   FOUNDING DONOR BUTTON
+========================================= */
+
+.founding-donor-button {
+    display: inline-block;
+    padding: 15px 30px;
+    border-radius: 30px;
+    background: #dfbd86;
+    color: white;
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: transform .25s ease, background .25s ease;
+}
+
+.founding-donor-button {
+    display: inline-block;
+    padding: 15px 30px;
+    border-radius: 30px;
+    background: #dfbd86;
+    color: white;
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: default;
+}
+
+
+/* =========================================
+   QUOTE
+========================================= */
+
+.founding-donor-quote {
+    text-align: center;
+}
+
+.founding-donor-quote p {
+    margin: 0;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 36px;
+    line-height: 1.1;
+    font-style: italic;
+    color: #174b38;
+}
+
+.founding-donor-quote span {
+    display: block;
+    width: 45px;
+    height: 2px;
+    margin: 25px auto 0;
+    background: #dfbd86;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 1000px) {
+
+    .founding-donors-intro {
+        padding: 95px 30px 40px;
+    }
+
+    .founding-donors-intro h1 {
+        font-size: 64px;
+    }
+
+    .donor-tier-section {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
+    .donor-tier-grid {
+        grid-template-columns: 1fr;
+        max-width: 650px;
+        margin: 0 auto;
+    }
+
+    .donor-tier-card {
+        min-height: auto;
+    }
+
+    .founding-donor-cta-content {
+        grid-template-columns: 1fr;
+        gap: 45px;
+    }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+    .founding-donors-intro {
+        padding: 75px 20px 35px;
+    }
+
+    .founding-donors-intro h1 {
+        font-size: 50px;
+    }
+
+    .founding-donors-intro-text {
+        font-size: 15px;
+    }
+
+    .donor-tier-section {
+        padding: 20px 20px 55px;
+    }
+
+    .donor-tier-card {
+        padding: 42px 25px 28px;
+        border-radius: 18px;
+    }
+
+    .donor-tier-card h2 {
+        font-size: 42px;
+    }
+
+    .founding-donor-cta {
+        padding: 65px 20px 70px;
+    }
+
+    .founding-donor-cta h2 {
+        font-size: 48px;
+    }
+
+    .founding-donor-quote p {
+        font-size: 31px;
+    }
+
+    .founding-donor-button {
+        width: 100%;
+        box-sizing: border-box;
+        text-align: center;
+    }
+
+}
+
+/* =========================================
+   CURRENT DONATE PAGE — MOBILE FIX
+========================================= */
+
+@media (max-width: 600px) {
+
+    .donate-intro {
+        padding: 75px 6%;
+    }
+
+    .donate-intro-content {
+        max-width: 100%;
+    }
+
+    .donate-intro h1 {
+        font-size: 52px;
+        line-height: 1;
+    }
+
+    .donate-intro p {
+        max-width: 100%;
+        font-size: 17px;
+        line-height: 1.7;
+    }
+
+    .donate-primary-button {
+        width: 100%;
+        box-sizing: border-box;
+        text-align: center;
+    }
+
+
+    .donate-help {
+        padding: 75px 6%;
+    }
+
+    .donate-section-heading {
+        max-width: 100%;
+    }
+
+    .donate-section-heading h2 {
+        font-size: 46px;
+        line-height: 1;
+    }
+
+    .donate-section-heading > p {
+        max-width: 100%;
+        font-size: 17px;
+        line-height: 1.7;
+    }
+
+
+    .donate-help-grid {
+        grid-template-columns: 1fr;
+        width: 100%;
+    }
+
+    .donate-help-card {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+}
