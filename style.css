@@ -3968,3 +3968,12 @@ footer {
 .donor-hall-link {
     text-align: center;
 }
+
+/* LARGE DESKTOP HERO */
+
+@media (min-width: 1400px) {
+    .home-hero {
+        background-size: 100% auto;
+        background-position: center top;
+    }
+}
