@@ -528,7 +528,8 @@ HOME HERO — SPLIT LAYOUT
     display: grid;
     grid-template-columns: 44% 56%;
     min-height: calc(100vh - 90px);
-    margin-top: 90px;
+    margin-top: 0;
+    padding: 0;
     background: var(--cream);
     overflow: hidden;
 }
