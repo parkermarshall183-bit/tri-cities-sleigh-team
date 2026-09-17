@@ -751,6 +751,28 @@ HOME HERO — MOBILE
 }
 
 /* =========================================
+   HIDE HERO IMAGE ON TABLET + MOBILE
+========================================= */
+
+@media (max-width: 800px) {
+
+    .hero-image {
+        display: none;
+    }
+
+    .home-hero {
+        display: flex;
+        min-height: 600px;
+        background: var(--cream);
+    }
+
+    .hero-content {
+        width: 100%;
+    }
+
+}
+
+/* =========================================
    SHARED PAGE HERO
 ========================================= */
 
