@@ -527,7 +527,7 @@ HOME HERO — SPLIT LAYOUT
 .home-hero {
     display: grid;
     grid-template-columns: 44% 56%;
-    min-height: calc(100vh - 90px);
+    min-height: 600px;
     margin-top: 0;
     padding: 0;
     background: var(--cream);
