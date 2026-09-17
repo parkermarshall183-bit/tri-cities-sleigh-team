@@ -3256,6 +3256,31 @@ footer {
 }
 
 /* =========================================
+   VOLUNTEER — COMING SOON
+========================================= */
+
+.volunteer-coming-soon {
+    min-height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 80px 20px;
+    box-sizing: border-box;
+}
+
+.volunteer-coming-soon p {
+    margin: 0;
+    color: var(--green);
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+#volunteer-form {
+    display: none;
+}
+
+/* =========================================
    FOUNDING DONORS / DONOR HALL OF FAME
 ========================================= */
 
