@@ -3981,3 +3981,13 @@ footer {
 .founding-donor-quote small {
     font-size: 1.15rem;
 }
+
+.founding-donor-quote small {
+    display: block;
+    margin-top: 12px;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.35rem;
+    font-weight: 500;
+    font-style: normal;
+    color: var(--green);
+}
