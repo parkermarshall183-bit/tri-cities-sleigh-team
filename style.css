@@ -3977,3 +3977,7 @@ footer {
         background-position: center top;
     }
 }
+
+.founding-donor-quote small {
+    font-size: 1.15rem;
+}
