@@ -1969,7 +1969,7 @@ HOME HERO — MOBILE
 
 .meet-team-photo {
     width: calc(100% - 30px);
-    height: 190px;
+    height: 250px;
 
     margin: 15px auto 0;
 
@@ -1988,10 +1988,6 @@ HOME HERO — MOBILE
     height: 100%;
     object-fit: cover;
     object-position: center;
-}
-
-.eric-team-photo {
-    object-position: center top;
 }
 
 .meet-team-photo-placeholder {
