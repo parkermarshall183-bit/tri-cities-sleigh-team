@@ -1983,12 +1983,11 @@ HOME HERO — MOBILE
 }
 
 .meet-team-photo img {
+    display: block;
     width: 100%;
     height: 100%;
-
     object-fit: cover;
-
-    display: block;
+    object-position: center;
 }
 
 .meet-team-photo-placeholder {
