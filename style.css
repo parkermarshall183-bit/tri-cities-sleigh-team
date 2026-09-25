@@ -1986,8 +1986,12 @@ HOME HERO — MOBILE
     display: block;
     width: 100%;
     height: 100%;
-    object-fit: contain;
+    object-fit: cover;
     object-position: center;
+}
+
+.eric-team-photo {
+    object-position: center top;
 }
 
 .meet-team-photo-placeholder {
