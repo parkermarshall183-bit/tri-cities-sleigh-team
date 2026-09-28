@@ -3831,3 +3831,8 @@ footer {
     object-position: 50% 35%;
 }
 
+/* Brittany's photo only - keep the card the exact same size */
+.brittany-team-photo {
+    object-position: center top;
+}
+
