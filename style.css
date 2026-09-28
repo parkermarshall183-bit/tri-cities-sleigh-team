@@ -3826,3 +3826,11 @@ footer {
     font-style: normal;
     color: var(--green);
 }
+
+.eric-team-photo img {
+    object-position: 50% 15%;
+}
+
+.brittany-team-photo img {
+    object-position: 50% 15%;
+}
